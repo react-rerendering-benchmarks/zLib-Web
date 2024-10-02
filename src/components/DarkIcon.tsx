@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Icon from "@ant-design/icons";
 import moon from "@images/moon";
 
@@ -6,8 +7,5 @@ import moon from "@images/moon";
  *
  * @return {*}  {JSX.Element}
  */
-const DarkIcon: () => JSX.Element = (): JSX.Element => (
-    <Icon component={moon} />
-);
-
+const DarkIcon: () => JSX.Element = memo((): JSX.Element => <Icon component={moon} />);
 export default DarkIcon;
