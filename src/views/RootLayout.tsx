@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Copyright from "@components/Copyright";
 import { MIN_WIDTH } from "@consts";
 import { Layout } from "antd/es/index";
@@ -8,18 +9,12 @@ import { Outlet } from "react-router-dom";
  *
  * @return {*}  {JSX.Element}
  */
-const RootLayout: () => JSX.Element = (): JSX.Element => {
-    return (
-        <Layout
-            className="h-auto min-h-screen"
-            style={{
-                minWidth: MIN_WIDTH,
-            }}
-        >
+const RootLayout: () => JSX.Element = memo((): JSX.Element => {
+  return <Layout className="h-auto min-h-screen" style={{
+    minWidth: MIN_WIDTH
+  }}>
             <Outlet />
             <Copyright />
-        </Layout>
-    );
-};
-
+        </Layout>;
+});
 export default RootLayout;

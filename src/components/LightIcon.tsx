@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Icon from "@ant-design/icons";
 import sun from "@images/sun";
 
@@ -6,8 +7,5 @@ import sun from "@images/sun";
  *
  * @return {*}  {JSX.Element}
  */
-const LightIcon: () => JSX.Element = (): JSX.Element => (
-    <Icon component={sun} />
-);
-
+const LightIcon: () => JSX.Element = memo((): JSX.Element => <Icon component={sun} />);
 export default LightIcon;

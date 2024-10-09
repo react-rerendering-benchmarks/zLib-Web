@@ -1,18 +1,21 @@
+import { memo } from "react";
 import { Divider, Layout, Typography } from "antd";
-
-const { Footer } = Layout;
-const { Text, Link } = Typography;
+const {
+  Footer
+} = Layout;
+const {
+  Text,
+  Link
+} = Typography;
 
 /**
  * 底部栏, 放置版权声明
  *
  * @return {*}  {JSX.Element}
  */
-const Copyright: () => JSX.Element = (): JSX.Element => {
-    const year: number = new Date().getFullYear();
-
-    return (
-        <Footer className="text-center">
+const Copyright: () => JSX.Element = memo((): JSX.Element => {
+  const year: number = new Date().getFullYear();
+  return <Footer className="text-center">
             <Text type="secondary">
                 Copyright &copy; 2022 - {year}
                 <Divider type="vertical" />
@@ -28,8 +31,6 @@ const Copyright: () => JSX.Element = (): JSX.Element => {
                 </Link>
                 提供
             </Text>
-        </Footer>
-    );
-};
-
+        </Footer>;
+});
 export default Copyright;
